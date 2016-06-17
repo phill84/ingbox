@@ -1,8 +1,4 @@
 {
-    "push": {
-      "name": "phill84/centos68-tcserver",
-      "vcs": false
-    },
     "variables": {
         "atlas_username": "{{env `ATLAS_USERNAME`}}",
         "atlas_name": "{{env `ATLAS_NAME`}}"
