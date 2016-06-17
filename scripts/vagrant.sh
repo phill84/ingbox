@@ -1,6 +1,8 @@
 #!/bin/bash
-export http_proxy=http://10.0.2.2:3128
-export https_proxy=http://10.0.2.2:3128
+if ! nslookup www.google.com >/dev/null; then
+    export http_proxy=http://10.0.2.2:3128
+    export https_proxy=http://10.0.2.2:3128
+fi
 
 # Vagrant specific
 date > /etc/vagrant_box_build_time
