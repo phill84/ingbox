@@ -1,5 +1,5 @@
 #!/bin/bash
-if ! nslookup www.google.com >/dev/null; then
+if ! curl -s http://googlee.com >/dev/null; then
     export http_proxy=http://10.0.2.2:3128
     export https_proxy=http://10.0.2.2:3128
 fi
