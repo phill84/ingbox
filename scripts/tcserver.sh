@@ -20,4 +20,8 @@ groupadd vfabric
 adduser -d /opt/vmware/vfabric-tc-server-standard -g vfabric tcserver
 chown -R tcserver:vfabric /opt/vmware /etc/httpd/conf.d /var/log/tcserver
 
+if ! tar tf /tmp/tcserver.tar.gz >/dev/null 2>/dev/null; then
+    rm -f /tmp/tcserver.tar.gz
+    wget https://github.com/phill84/ingboxes/raw/master/vfabric-tc-server-developer-2.9.9.RELEASE.tar.gz -O /tmp/tcserver.tar.gz
+fi
 su - tcserver -c 'tar zxf /tmp/tcserver.tar.gz --strip-components=1'
