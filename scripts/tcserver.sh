@@ -12,6 +12,7 @@ echo 'installing java 8'
 wget -qO- --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u92-b14/server-jre-8u92-linux-x64.tar.gz | tar zxf -
 ln -s $(ls -d jdk1.8.0_*)/jre jre-1.8.0-oracle.x86_64
 update-alternatives --install /usr/bin/java java /usr/lib/jvm/jre-1.8.0-oracle.x86_64/bin/java 1
+echo 'export JAVA_HOME=/usr' > /etc/profile.d/java_home.sh
 
 echo 'installing tcserver'
 mkdir -p /opt/vmware/instances /var/log/tcserver
